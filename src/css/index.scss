@@ -1,0 +1,63 @@
+@use "util" ;
+
+html,body,#root{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+}
+ul.user-list{
+  display: grid;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  grid-template-columns: repeat(5,1fr);
+  gap: 1rem;
+
+  & > li{
+    width: 100%;
+    height: 100%;
+  }
+
+  @include util.tab{
+    grid-template-columns: repeat(2,1fr);
+  }
+  @include util.sp{
+    grid-template-columns: repeat(1,1fr);
+  }
+  
+
+}
+
+.user{
+  $user-c : black ;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  border-radius: 10px;
+  border: solid 2px $user-c;
+  text-decoration: none;
+  color: $user-c;
+  padding:0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  &:active{
+    transform: scale(0.95);
+    transform-origin: center center;
+  }
+  
+  h3{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  img{
+    position: relative;
+    left: 10%;
+    max-width: 80%;
+    height: auto;
+    border-radius: 1rem;
+  }
+}
+
